@@ -2,11 +2,18 @@
 
 echo "Setting up drawyourdir..."
 
+# Check if Python is installed
+if ! command -v python3 &> /dev/null
+then
+    echo "Python could not be found, please install it first."
+    exit 1
+fi
+
 # Check if pip is installed
 if ! command -v pip &> /dev/null
 then
     echo "pip could not be found, please install it first."
-    exit
+    exit 1
 fi
 
 # Install pathspec Python package
@@ -18,15 +25,13 @@ mkdir -p /usr/local/bin/drawyourdir
 # Copy the script to the target directory
 cp drawyourdir.py /usr/local/bin/drawyourdir
 
-# IMPORTANT: Change made here. Instead of making the directory executable,
-# you should create a symbolic link to the script in the /usr/local/bin directory.
-# This way, the script can be executed directly from the terminal using the command name.
+# Make the script executable
+chmod +x /usr/local/bin/drawyourdir/drawyourdir.py
 
-# Remove the line chmod +x /usr/local/bin/drawyourdir
-# Add the following line to create a symbolic link
-
+# Correctly create a symbolic link for the 'drawyourdir' command in /usr/local/bin
 ln -s /usr/local/bin/drawyourdir/drawyourdir.py /usr/local/bin/drawyourdir
 
-# Now, if you write `drawyourdir` in the terminal, it should work
+echo "alias drawyourdir='python3 /usr/local/bin/drawyourdir/drawyourdir.py'" >> ~/.bashrc
 
+ 
 echo "drawyourdir is ready to use!"
