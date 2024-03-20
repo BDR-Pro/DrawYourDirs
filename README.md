@@ -7,8 +7,10 @@ Draw a pretty tree of your directory structure with `drawyourdir`! This Python s
 Clone this repository to your local machine:
 
 ```bash
-git clone https://github.com/bdr-pro/drawyourdir.git
+
+git clone https://github.com/BDR-Pro/DrawYourDirs.git
 cd drawyourdir
+
 ```
 
 ### linux / macOS
