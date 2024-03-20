@@ -1,4 +1,4 @@
-# drawyourdir 🌳
+# DrawYourDir 🌳
 
 Draw a pretty tree of your directory structure with `drawyourdir`! This Python script prints a directory tree, respecting `.gitignore`, ignoring hidden files (if specified), ordering files by their size within directories, and limiting the number of files listed.
 
